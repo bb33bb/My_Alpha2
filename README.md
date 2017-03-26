@@ -1,2 +1,5 @@
 # My_Alpha2
-This is alpha2 update from myself
+
+This is the new alpha2 transforming the old version alpha2.
+
+reference: http://blog.csdn.net/instruder/article/details/6050048#
