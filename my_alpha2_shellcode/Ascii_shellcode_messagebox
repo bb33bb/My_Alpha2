@@ -1,0 +1,24 @@
+#include <stdio.h>  
+#include <windows.h>
+//
+//char aphal1[]={"TYIIIIIIIIIIIIIIII7QZjAXP0A0AkAAQ2AB2BB0BBABXP8ABuJIxkVvqKRJ31PXrsOKtMFEk6cL9oKcFQIPPPmkFrHKNaQlYoXSjHIu9oyokOsSu1RLasfNQuPxPegps0A"};
+//char aphal1[]={"TYIIIIIIIIIIIIIIII7QZjAXP0A0AkAAQ2AB2BB0BBABXP8ABuJItsYKpSRH47Pe0sBTu8BFU1ay2LNk9TPSPPRpBsOHkZUWZuSGkOJp0SNXi2oOK1SLYohPA"};
+
+int main(int argc, char **argv)  
+
+{ 
+  //纯Ascii码shellcode调出messagebox， window xp sp3
+  //char aphal1[]={"TYIIIIIIIIIIIIIIII7QZjAXP0A0AkAAQ2AB2BB0BBABXP8ABuJIxkVvqKRJ31PXrsOKtMFEk6cL9oKcFQIPPPmkFrHKNaQlYoXSjHIu9oyokOsSu1RLasfNQuPxPegps0A"};
+	char aphal1[]={"TYIIIIIIIIIIIIIIII7QZjAXP0A0AkAAQ2AB2BB0BBABXP8ABuJItsYKpSRH47Pe0sBTu8BFU1ay2LNk9TPSPPRpBsOHkZUWZuSGkOJp0SNXi2oOK1SLYohPA"};
+	/*char aphal1[]= "\x33\xDB\x53\x68\x77\x65\x73\x74\x68\x66\x61\x69"
+                       "\x6C\x8B\xC4\x53\x50\x50\x53\xB8\xEA\x07\xD5\x77"
+                       "\xFF\xD0\x53\xB8\xA2\xBF\x81\x7C\xFF\xD0";*/
+	LoadLibrary("user32.dll");
+ __asm
+ {
+   lea esp,aphal1
+   jmp esp
+ }
+ 
+ return 0;
+}
