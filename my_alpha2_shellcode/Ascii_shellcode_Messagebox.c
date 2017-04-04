@@ -1,4 +1,4 @@
-//代码解读：本代码主要实现全Ascii码调用messagebox
+//代码解读：本代码主要实现全Ascii码调用messagebox，实验环境为win xp
 //shellcode代码aphal1放在9/10行，函数jmp到messagebox的入口地址之后，继续执行messagebox函数，会报错c0000005 access violation的错误，估计是alphal1在全局变量代码区
 //会影响到messagebox调用时候的堆栈分配，引起访问不可访问的内存错误；当将alphal1放在main函数内，变成一个一般变量，就不会出现这个问题。因此在后续shellcode
 //编写中注意将shellcode放在可执行堆栈空间内，最好附近空间都可以访问到。（例如开辟一个比较大的堆栈，将可执行shellcode放在中间）
